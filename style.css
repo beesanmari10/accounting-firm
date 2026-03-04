@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+   font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #fefefe;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.hero {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), 
+    url('https://michnalaw.com/wp-content/uploads/2018/05/michna-services-5-1170x749.jpg') no-repeat center center/cover;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: auto;
+  animation: fadeIn 2s ease-in;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-top: 10px;
+}
+.logo {text-decoration: none;
+  color: #222;
+  font-weight: bold;}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+}
+
+.section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  border-radius: 50px 50px 0px 0px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: #f7f7f7;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonials {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.testimonial-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  text-align: center;
+  max-width: 300px;
+}
+.testimonial-card img {
+  width: 60px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.faq-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+.faq-left h2 {
+  font-size: 2rem;
+  color: #5a4c4c;
+}
+.faq-animation {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10%;
+}
+
+.faq-right details {
+  margin-bottom: 1rem;
+}
+.faq-right summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form-section {
+  background-color: #fafafa;
+}
+.contact-box {
+  background-color: white;
+  border-radius: 25px 25px 0 0;
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.contact-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-box input, .contact-box textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.contact-box button {
+  background-color: #4e3f3f;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.contact-box button:hover {
+  background-color: #6e5757;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #eee;
+  margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.icon {
+  color: #6e5757;
+}
+.bg-light {
+  background-color: #f9f6f3;
+}
+/* Pop-up container (bottom right) */
+.popup-bottom-right {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: end;
+  background: transparent;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Active state */
+.popup-bottom-right.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* PNG image styling */
+.popup-cutout {
+  height: 370px;
+  max-height: 55vh;
+  object-fit: contain;
+  user-select: none;
+}
+
+/* Welcome message box (no background, just text) */
+.popup-message {
+  background: white;
+  padding: 10px 15px;
+  margin-right: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: left;
+}
+
+.popup-message h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.popup-message p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Close button */
+.popup-close {
+  background: white;
+  border: none;
+  font-size: 18px;
+  color: #999;
+  margin-left: 8px;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  align-self: flex-start;
+  transform: translateY(-10px);
+}
+@media (max-width: 768px) {
+  .hero-text {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+html {
+  scroll-behavior: smooth;
+}
